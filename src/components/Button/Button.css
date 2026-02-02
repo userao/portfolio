@@ -1,0 +1,15 @@
+.btn {
+    display: block;
+    border: 2px solid var(--main-color);
+    height: 42px;
+    width: 130px;
+    font-family: "Roboto Condensed", sans-serif;
+    cursor: pointer;
+    background: transparent;
+}
+
+.btn-dark {
+    background: var(--main-color);
+    color: var(--bg-color);
+}
+

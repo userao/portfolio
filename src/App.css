@@ -1,0 +1,64 @@
+.article {
+    width: 70%;
+    margin: 150px auto;
+}
+
+.article__header {
+    text-transform: uppercase;
+    font-size: 3.5rem;
+    line-height: 125%;
+    letter-spacing: 10%;
+    margin-block: 40px 30px;
+}
+
+.article__content {
+    line-height: 150%;
+    margin-block: 30px;
+}
+
+.abt-me button {
+    width: 230px;
+    height: 70px;
+    font-size: 2rem;
+}
+
+.horizontal-line {
+    width: 200px;
+    height: 10px;
+    background: var(--main-color);
+}
+
+.socials-header {
+    margin-block: 100px 15px;
+}
+
+.reach-me__modal {
+    position: relative;
+    background: var(--bg-color);
+    width: 400px;
+    padding: 1.5rem 1rem;
+}
+
+.reach-me__form > label {
+    display: block;
+    margin-bottom: 1rem;
+    & > * {
+       width: 100%; 
+       padding: 5px;
+       margin-top: 0.5rem;
+       resize: none;
+    }
+}
+
+.close-modal-btn {
+    border: none;
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1rem;
+    width: 40px;
+    background: none;
+    color: var(--main-color);
+    font-size: 40px;
+    cursor: pointer;
+}
+

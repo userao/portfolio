@@ -1,0 +1,10 @@
+.socials {
+    display: flex;
+    gap: 0.875rem;
+}
+
+.socials a {
+    text-decoration: none;
+    color: var(--main-color);
+    font-size: 1.875rem;
+}

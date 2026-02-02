@@ -1,0 +1,15 @@
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav__list {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav__list a {
+    text-decoration: none;
+    color: var(--main-color);
+}
