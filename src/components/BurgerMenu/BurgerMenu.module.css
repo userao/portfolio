@@ -1,0 +1,37 @@
+.burger-btn {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid var(--main-color);
+    cursor: pointer;
+}
+
+.burger-btn i {
+    font-size: 1.2rem;
+}
+
+.expanded {
+    color: red;
+}
+
+.burger-btn nav {
+    display: block;
+    width: max-content;
+    position: absolute;
+    border: 2px solid var(--main-color);
+    background: var(--bg-color);
+    top: 38px;
+    right: -1.5px;
+}
+
+.burger-btn nav ul {
+    display: block;
+    & li {
+        padding: 1rem 2.5rem;
+        font-size: 1rem;
+    }
+    & li:not(:first-child) {
+        border-top: 2px solid var(--main-color);
+    }
+}
