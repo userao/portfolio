@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Button from "../components/Button/Button";
-import Socials from "../components/Socials/Socials";
-import Modal from "../components/Modal/Modal";
+import Button from "../../components/Button/Button";
+import Socials from "../../components/Socials/Socials";
+import Modal from "../../components/Modal/Modal";
 
 export default function Main() {
     const [isModalShown, setIsModalShown] = useState(false);

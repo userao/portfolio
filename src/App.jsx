@@ -1,8 +1,9 @@
 import "./App.css";
 import Layout from "./components/Layout/Layout";
 import { Routes, Route } from "react-router-dom";
-import Main from "./pages/Main";
-import Blog from "./pages/Blog";
+import Main from "./pages/Main/Main";
+import Blog from "./pages/Blog/Blog";
+import Post from "./pages/Post/Post";
 
 function App() {
   
@@ -11,7 +12,10 @@ function App() {
         <Layout>
             <Routes>
                 <Route path="/" element={<Main />} />
-                <Route path="blog" element={<Blog />} />
+                <Route path="blog">
+                    <Route index element={<Blog />} />
+                    <Route path=":postId" element={<Post />} />
+                </Route>
             </Routes>
         </Layout>
     );
