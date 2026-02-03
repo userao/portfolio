@@ -5,3 +5,16 @@
     align-items: center;
     justify-content: space-around;
 }
+
+.light {
+    color: var(--main-color);
+}
+
+.dark {
+    color: var(--bg-color);
+    background: var(--main-color);
+    border-color: var(--bg-color);
+    & i {
+        color: var(--bg-color);
+    }
+}

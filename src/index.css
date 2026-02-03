@@ -10,14 +10,23 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    color: var(--main-color)
+    /* color: var(--main-color) */
 }
 
 #root {
     font-family: "Roboto Condensed", sans-serif;
-    background: var(--bg-color);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     min-height: 100vh;
+}
+
+.light {
+    background: var(--bg-color);
+    color: var(--main-color);
+}
+
+.dark {
+    background: var(--main-color);
+    color: var(--bg-color);
 }

@@ -1,13 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import styles from "./BurgerMenu.module.css";
 import classNames from "classnames";
 import Nav from "../Nav/Nav";
+import { ThemeContext } from "../../context/context";
 
 export default function BurgerMenu() {
+    const {theme} = useContext(ThemeContext);
     const [isExpanded, setIsExpanded] = useState(false);
-    const classes = classNames(styles["burger-btn"], {
-        [styles.expanded]: isExpanded,
-    });
+    const classes = classNames(styles["burger-btn"], styles[theme]);
 
     function handleClick() {
         setIsExpanded((prev) => !prev);

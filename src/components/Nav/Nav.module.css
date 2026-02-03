@@ -11,5 +11,5 @@
 
 .nav__list a {
     text-decoration: none;
-    color: var(--main-color);
+    color: inherit;
 }

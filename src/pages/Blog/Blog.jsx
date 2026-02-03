@@ -8,7 +8,7 @@ export default function Blog() {
         const fetchPosts = async () => {
             setFetchState("fetching");
             fetch(
-                "https://jsonplaceholder.typicode.com/posts?_page=1&_limit=10",
+                "https://jsonplaceholder.typicode.com/posts?_page=1&_limit=20",
                 {
                     method: "GET",
                     mode: "cors",

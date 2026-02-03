@@ -1,6 +1,11 @@
+.dark {
+    & .horizontal-line {
+        background: var(--bg-color);   
+    }
+}
+
 .article {
-    width: 70%;
-    margin: 150px auto;
+    padding: 150px 15%;
 }
 
 .article__header {

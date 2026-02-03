@@ -1,17 +1,19 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Button from "../../components/Button/Button";
 import Socials from "../../components/Socials/Socials";
 import Modal from "../../components/Modal/Modal";
+import { ThemeContext } from "../../context/context";
 
 export default function Main() {
     const [isModalShown, setIsModalShown] = useState(false);
+    const { theme } = useContext(ThemeContext);
 
     function handleSubmit(e) {
         e.preventDefault();
     }
     return (
         <>
-            <article className="article abt-me">
+            <article className={ `article abt-me ${theme}` }>
                 <div className="horizontal-line" />
                 <h1 className="article__header">
                     Я Андрей&nbsp;Остапенко

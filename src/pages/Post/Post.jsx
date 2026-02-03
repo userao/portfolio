@@ -27,6 +27,9 @@ export default function Post() {
         fetchPost();
     }, [post]);
 
+    console.log(post);
+    
+
     const componentToRender = {
         "fetching": () => <p>Загрузка поста</p>,
         "error": () => <p>Ошибка сети</p>,

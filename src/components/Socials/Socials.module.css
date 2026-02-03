@@ -5,6 +5,6 @@
 
 .socials a {
     text-decoration: none;
-    color: var(--main-color);
+    color: inherit;
     font-size: 1.875rem;
 }
