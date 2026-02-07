@@ -7,7 +7,7 @@ export default function Blog() {
     useEffect(() => {
         const fetchPosts = async () => {
             setFetchState("fetching");
-            fetch(
+            return fetch(
                 "https://jsonplaceholder.typicode.com/posts?_page=1&_limit=20",
                 {
                     method: "GET",
@@ -16,15 +16,15 @@ export default function Blog() {
             )
                 .then((res) => res.json())
                 .then((data) => {
-                    setPosts(data);
-                    setFetchState("success");
+                  setFetchState("success");
+                  return data;
                 })
-                .catch((err) => {
+                .catch(() => {
                     setFetchState("error");
                 });
         };
 
-        fetchPosts();
+        fetchPosts().then((posts) => setPosts(posts));
     }, []);
 
     const componentToRender = {

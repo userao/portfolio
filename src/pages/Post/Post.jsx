@@ -9,24 +9,22 @@ export default function Post() {
   useEffect(() => {
     const fetchPost = () => {
       setFetchState("fetching");
-      fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`, {
+      return fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`, {
         method: "GET",
         mode: "cors",
       })
         .then((res) => res.json())
         .then((data) => {
-          setPost(data);
           setFetchState("success");
+          return data;
         })
-        .catch((err) => {
+        .catch(() => {
           setFetchState("error");
         });
     };
 
-    fetchPost();
-  }, []);
-
-  console.log(fetchState);
+    fetchPost().then((post) => setPost(post));
+  }, [postId]);
 
   const componentToRender = {
     idle: () => null,
