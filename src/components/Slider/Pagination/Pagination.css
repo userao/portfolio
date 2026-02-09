@@ -1,0 +1,19 @@
+.pagination {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.pagination__dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    background: var(--main-color);
+}
+
+.pagination__dot.active {
+    background: var(--bg-color);
+    border: 3px solid var(--main-color);
+}

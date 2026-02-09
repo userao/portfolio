@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { ThemeContext } from "../context";
 
 export default function ThemeProvider({children}) {
