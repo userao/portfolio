@@ -8,11 +8,10 @@ export default function SliderImages({ images }) {
     const { activeSlide } = useContext(SliderContext);
     const [translateAmount, setTranslateAmount] = useState(0);
     const windowWidth = useWindowWidth(); 
-    const inlineMargin = 20;
 
     useEffect(() => {
         const sliderWidth = document.querySelector(".slider").offsetWidth;
-        const translateX = -(activeSlide * sliderWidth) - (inlineMargin * activeSlide);
+        const translateX = -(activeSlide * sliderWidth);
         
         setTranslateAmount(translateX);
     }, [activeSlide, windowWidth]);

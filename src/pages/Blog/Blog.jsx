@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Spinner from "../../components/Spinner/Spinner";
 import PostCard from "../../components/Post/PostCard";
 import "./Blog.css";
 export default function Blog() {
@@ -16,8 +17,8 @@ export default function Blog() {
             )
                 .then((res) => res.json())
                 .then((data) => {
-                  setFetchState("success");
-                  return data;
+                    setFetchState("success");
+                    return data;
                 })
                 .catch(() => {
                     setFetchState("error");
@@ -28,12 +29,13 @@ export default function Blog() {
     }, []);
 
     const componentToRender = {
-        fetching: () => <p>Загрузка постов</p>,
-        error: () => <p>Ошибка сети</p>,
+        idle: () => null,
+        fetching: () => <Spinner />,
         success: () =>
             posts.map((post) => (
                 <PostCard key={post.id} title={post.title} id={post.id} />
             )),
+        error: () => <div>Ошибка сети</div>,
     };
 
     return (

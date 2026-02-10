@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import Slider from "../../components/Slider/Slider";
+import Spinner from "../../components/Spinner/Spinner";
 
 export default function Works() {
     const apiUrl = "https://api.vecteezy.com/v2/64324/resources/";
     const imageIds = ["2198834", "21721083", "7290560", "22922647", "2408045"];
     const [images, setImages] = useState([]);
+    const [fetchState, setFetchState] = useState("idle");
 
     useEffect(() => {
         const fetchDownloadUrl = async (id) => {
@@ -25,25 +27,42 @@ export default function Works() {
                 .then((blob) => URL.createObjectURL(blob));
 
         const getImages = async () => {
-            const downloadUrls = await Promise.all(
-                imageIds.map((id) => fetchDownloadUrl(id)),
-            );
-            const images = await Promise.all(
-                downloadUrls.map(async ({ id, url }) => {
-                    const image = await fetchImage(url);
-                    return { id, src: image };
-                }),
-            );
+            setFetchState("fetching");
 
-            return images;
+            try {
+                const downloadUrls = await Promise.all(
+                    imageIds.map((id) => fetchDownloadUrl(id)),
+                );
+                const images = await Promise.all(
+                    downloadUrls.map(async ({ id, url }) => {
+                        const image = await fetchImage(url);
+                        return { id, src: image };
+                    }),
+                );
+
+                setFetchState("success");
+
+                return images;
+            } catch (err) {
+                setFetchState("error");
+            }
         };
 
         getImages().then((images) => setImages(images));
     }, []);
 
+    const componentToRender = {
+        idle: () => null,
+        fetching: () => <Spinner />,
+        success: () => <Slider images={images} />,
+        error: () => <div>Ошибка сети</div>,
+    };
+
     return (
         <article className="article">
-            {images.length > 0 && <Slider images={images} />}
+            <div className="horizontal-line" />
+            <h1 className="article__header">Мои работы</h1>
+            {componentToRender[fetchState]()}
         </article>
     );
 }

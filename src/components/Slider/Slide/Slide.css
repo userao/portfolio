@@ -1,10 +1,9 @@
 .slide {
     overflow: hidden;
-    margin-inline: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: clamp(200px, 50vh, 500px);
+    height: clamp(200px, 60vh, 500px);
     width: 100%;
     flex-shrink: 0;
 }

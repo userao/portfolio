@@ -11,9 +11,19 @@
     border-radius: 50%;
     border: none;
     background: var(--main-color);
+    transition: all 0.3s ease-in-out;
 }
 
 .pagination__dot.active {
     background: var(--bg-color);
     border: 3px solid var(--main-color);
+}
+
+.pagination__dot.dark {
+    background: var(--bg-color);
+}
+
+.pagination__dot.active.dark {
+    background: var(--main-color);
+    border-color: var(--bg-color);
 }

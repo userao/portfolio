@@ -1,0 +1,22 @@
+.spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+.spinner i {
+    font-size: 2rem;
+    color: inherit;
+    animation: 1s linear infinite spin;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

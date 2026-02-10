@@ -1,3 +1,4 @@
 .slider__images {
     display: flex;
+    transition: transform 1s ease-in-out;
 }
